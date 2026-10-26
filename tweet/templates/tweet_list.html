@@ -1,39 +1,42 @@
-{% extends 'layout.html' %} {% block title %} Tweet {% endblock %} 
+
+{% extends 'layout.html' %}
+
+{% block title %}Tweet List{% endblock %}
+
 {% block content %}
-<h1 class="text-center text-white mt-8">Django Project</h1>
 
-<a class="btn btn-primary mb-4" href="{% url 'tweet_create' %}">
-    Create a Tweet
-</a>
+<h2 class="text-center mb-4">All Tweets</h2>
 
-<div class="container row gap-3">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+
     {% for tweet in tweets %}
-    <div class="card" style="max-width: 320px">
-        {% if tweet.photo %}
-        <img
-            src="{{ tweet.photo.url }}"
-            class="card-img-top"
-            alt="Tweet photo" />
-        {% endif %}
+        <div class="col">
+            <div class="card h-100 shadow-sm">
 
-        <div class="card-body">
-            <h4 class="card-title">{{ tweet.user.username }}</h4>
-            <p class="card-text">{{ tweet.text }}</p>
-            {% if tweet.user == user %}
-            <a
-                href="{% url 'tweet_edit' tweet.id %}"
-                class="btn-solid theme-primary">
-                Edit
-            </a>
+                {% if tweet.photo %}
+                    <img
+                        src="{{ tweet.photo.url }}"
+                        class="card-img-top"
+                        alt="Tweet image"
+                        style="height: 200px; object-fit: cover;">
+                {% endif %}
 
-            <a
-                href="{% url 'tweet_delete' tweet.id %}"
-                class="btn-solid theme-danger">
-                Delete
-            </a>
-            {% endif %}
+                <div class="card-body">
+                    <p class="card-text">{{ tweet.text }}</p>
+                </div>
+
+                <div class="card-footer">
+                    <small class="text-muted">
+                        {{ tweet.created_at }}
+                    </small>
+                </div>
+
+            </div>
         </div>
-    </div>
+    {% empty %}
+        <p class="text-center">No tweets available.</p>
     {% endfor %}
+
 </div>
+
 {% endblock %}
