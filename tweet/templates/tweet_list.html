@@ -19,7 +19,7 @@
         <div class="card-body">
             <h4 class="card-title">{{ tweet.user.username }}</h4>
             <p class="card-text">{{ tweet.text }}</p>
-
+            {% if tweet.user == user %}
             <a
                 href="{% url 'tweet_edit' tweet.id %}"
                 class="btn-solid theme-primary">
@@ -31,6 +31,7 @@
                 class="btn-solid theme-danger">
                 Delete
             </a>
+            {% endif %}
         </div>
     </div>
     {% endfor %}
