@@ -1,18 +1,27 @@
-# Django Tweet Project
+# Django Tweet App
 
-A simple web application built with Django as part of my journey to learning full-stack web development.
+A simple Tweet application built with Django and Bootstrap. Users can create tweets with text and images, view tweets in a responsive card layout, and manage their accounts through authentication.
 
-## About the Project
+## Features
 
-This project is created to practice Django fundamentals, understand project structure, work with URL routing, views, templates, and learn how to build web applications using Python and Django.
+- User registration and login
+- User logout
+- Create tweets with text and photos
+- Display tweets in a responsive grid layout
+- Four tweet cards per row on large screens
+- Edit and delete tweets
+- Bootstrap 5 responsive navigation bar
+- Django template inheritance
+- CSRF protection for form submissions
 
-## Built With
+## Technologies Used
 
-- **Python** — Programming language
-- **Django** — Web framework
-- **HTML** — Web page structure
-- **SQLite** — Development database
-- **Git & GitHub** — Version control
+- Python
+- Django
+- HTML5
+- Bootstrap 5
+- SQLite
+- Django Template Language
 
 ## Project Structure
 
@@ -20,57 +29,71 @@ This project is created to practice Django fundamentals, understand project stru
 config/
 ├── config/
 │   ├── settings.py
-│   ├── urls.py
-│   ├── asgi.py
-│   └── wsgi.py
+│   └── urls.py
 ├── tweet/
 │   ├── migrations/
 │   ├── templates/
-│   │   └── index.html
-│   ├── admin.py
 │   ├── models.py
-│   ├── urls.py
-│   └── views.py
-├── static/
+│   ├── forms.py
+│   ├── views.py
+│   └── urls.py
+├── media/
+├── templates/
+│   ├── layout.html
+│   └── registration/
 ├── manage.py
-├── .gitignore
 └── README.md
 ```
 
-## Getting Started
+*The structure may vary depending on your project configuration.*
+
+## Installation and Setup
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/mahibulhasandev/first-django-project.git
-cd first-django-project
+git clone <your-repository-url>
+cd <your-project-directory>
 ```
 
 ### 2. Create a Virtual Environment
 
+Linux:
+
 ```bash
 python -m venv .venv
+source .venv/bin/activate
 ```
 
-Activate it on Linux:
+Windows:
 
 ```bash
-source .venv/bin/activate
+python -m venv .venv
+.venv\Scripts\activate
 ```
 
 ### 3. Install Django
 
 ```bash
-python -m pip install django
+pip install django
 ```
 
-### 4. Run Migrations
+If your project uses additional packages, install them as well.
+
+### 4. Apply Migrations
 
 ```bash
+python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 5. Start the Development Server
+### 5. Create a Superuser (Optional)
+
+```bash
+python manage.py createsuperuser
+```
+
+### 6. Run the Development Server
 
 ```bash
 python manage.py runserver
@@ -78,30 +101,37 @@ python manage.py runserver
 
 Open your browser and visit:
 
-http://127.0.0.1:8000/
+```text
+http://127.0.0.1:8000/tweet/
+```
 
-## What I'm Learning
+## Learning Goals
 
-- Django project and app structure
-- URL routing and views
-- Templates and HTML integration
-- Models and database migrations
-- Django admin panel
-- Git and GitHub workflow
+This project helps me practice:
+
+- Django models, views, and URL routing
+- ModelForm and form validation
+- User authentication and registration
+- File uploads and media handling
+- Django template inheritance
+- Bootstrap layout and responsive design
+- CRUD operations
 
 ## Future Improvements
 
-- Add more features to the application
-- Improve the user interface
-- Learn Django forms and authentication
-- Explore Django REST Framework
+- Add tweet search functionality
+- Add pagination
+- Display usernames on tweets
+- Add likes and comments
+- Improve the user profile system
+- Deploy the application online
 
 ## Author
 
 **Mahibul Hasan**
 
-- GitHub: [@mahibulhasandev](https://github.com/mahibulhasandev)
+CST Diploma Student | Learning Full-Stack Web Development
 
 ---
 
-*Learning step by step, building projects, and improving my development skills.*
+This project is built for learning and practicing Django web development.
