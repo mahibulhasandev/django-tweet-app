@@ -1,9 +1,10 @@
-{% extends 'layout.html' %} 
-{% block title %} Tweet {% endblock %} 
+{% extends 'layout.html' %} {% block title %} Tweet {% endblock %} 
 {% block content %}
 <h1 class="text-center text-white mt-8">Django Project</h1>
 
-<a class="btn-primary mb-4" href="{% url 'tweet_create' %}">Create a tweet</a>
+<a class="btn btn-primary mb-4" href="{% url 'tweet_create' %}">
+    Create a Tweet
+</a>
 
 <div class="container row gap-3">
     {% for tweet in tweets %}
