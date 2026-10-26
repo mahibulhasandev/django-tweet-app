@@ -26,7 +26,7 @@ def tweet_create(request):
             return redirect('tweet_list')
     else:
         form = TweetForm()
-    return render(request, 'tweet_form.html', {'forms': form})
+    return render(request, 'tweet_form.html', {'form': form})
 
 
 
@@ -41,7 +41,7 @@ def tweet_edit(request, tweet_id):
             return redirect('tweet_list')
     else:
         form = TweetForm(instance=tweet)
-    return render(request, 'tweet_form.html', {'forms': form})
+    return render(request, 'tweet_form.html', {'form': form})
 
 
 
