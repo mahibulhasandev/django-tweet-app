@@ -1,6 +1,6 @@
-
 from . import views
 from django.urls import path
+
 
 urlpatterns = [
     path('', views.tweet_list, name='tweet_list'),
